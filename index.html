@@ -5,52 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Password Generator Pro</title>
 <link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
+  <div class="card">
 
-    <div class="card">
-        <h1>Password Generator</h1>
-        <p>Create secure passwords instantly</p>
+    <h1>Password Generator</h1>
+    <p>Create secure passwords instantly</p>
 
-        <div class="output-box">
-            <input type="text" id="password" readonly>
-            <button class="copy-btn" onclick="copyPassword()">📋</button>
-        </div>
-
-        <div class="settings">
-            <label>Password Length:
-                <span id="lengthValue">12</span>
-            </label>
-
-            <input type="range"
-                   id="length"
-                   min="6"
-                   max="30"
-                   value="12"
-                   oninput="document.getElementById('lengthValue').innerText=this.value">
-
-            <div class="options">
-                <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
-                <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
-                <label><input type="checkbox" id="numbers" checked> Numbers</label>
-                <label><input type="checkbox" id="symbols" checked> Symbols</label>
-            </div>
-        </div>
-
-        <button class="generate-btn" onclick="generatePassword()">
-            Generate Password
-        </button>
-
-        <div class="strength">
-            Strength:
-            <span id="strengthText">Strong</span>
-        </div>
+    <div class="output-box">
+      <input type="text" id="password" readonly>
+      <button class="copy-btn" onclick="copyPassword()">📋</button>
     </div>
 
+    <label>
+      Password Length:
+      <span id="lengthValue">12</span>
+    </label>
+
+    <input
+      type="range"
+      id="length"
+      min="6"
+      max="30"
+      value="12"
+    >
+
+    <div class="options">
+      <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
+      <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
+      <label><input type="checkbox" id="numbers" checked> Numbers</label>
+      <label><input type="checkbox" id="symbols" checked> Symbols</label>
+    </div>
+
+    <button class="generate-btn" onclick="generatePassword()">
+      Generate Password
+    </button>
+
+    <div class="strength">
+      Strength:
+      <span id="strengthText">Strong</span>
+    </div>
+
+  </div>
 </div>
 
 <script src="script.js"></script>
