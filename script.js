@@ -1,27 +1,18 @@
 function generatePassword() {
 
-const chars =
-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+let chars = "";
 
-const length = document.getElementById("length").value;
+if(document.getElementById("uppercase").checked)
+chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-let password = "";
+if(document.getElementById("lowercase").checked)
+chars += "abcdefghijklmnopqrstuvwxyz";
 
-for(let i=0;i<length;i++) {
-password += chars.charAt(
-Math.floor(Math.random()*chars.length)
-);
-}
+if(document.getElementById("numbers").checked)
+chars += "0123456789";
 
-document.getElementById("password").value = password;
-}
+if(document.getElementById("symbols").checked)
+chars += "!@#$%^&*()_+[]{}<>?";
 
-function copyPassword() {
-
-const password =
-document.getElementById("password").value;
-
-navigator.clipboard.writeText(password);
-
-alert("Password Copied!");
-}
+const length =
+document.getElementById("length").
